@@ -1,7 +1,9 @@
 # Read Message
+# Listens to slack outgoing hook and responds with a nice 'lil image.
 
 import random
 from bottle import post, request, run
+
 SHIT_AUTH=b"token=HET8q577DUeWqdQsf77sda5u&"
 
 imgs = [
@@ -15,13 +17,10 @@ imgs = [
 @post('/')
 def reply_to_slack():
 	data = request.body.read()
-	print(data)
 	if not SHIT_AUTH in data:
-		print("Nuhuh")
 		return "Nuhuh"
 	
 	index = random.randint(0,len(imgs)-1)
-	
 	return '{"text": "'+imgs[index]+'"}'
 
 run(host='0.0.0.0', port=45678, debug=True)

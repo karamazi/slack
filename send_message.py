@@ -1,5 +1,5 @@
 # Slack bot
-# Uses Incoming webhook to send message to slack.
+# Uses Incoming webhook to send message to slack.	
 import requests
 
 TOKEN = "xoxp-16249741921-16281281505-24214241443-62d738d155"
